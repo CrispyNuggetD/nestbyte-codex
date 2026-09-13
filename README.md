@@ -2,6 +2,11 @@
 
 NestByte is Christopher's central workspace for building, organizing, and showcasing projects made with Codex. It also defines a portable working style for NestByte: thoughtful and supportive in conversation, technically rigorous in implementation, candid about uncertainty, and willing to challenge incorrect assumptions.
 
+> [!WARNING]
+> **This repository is public so that its GitHub Pages site can be published. Treat every file, commit, branch, pull request, issue, Actions log, and the repository's Git history as publicly visible.**
+>
+> Never commit plaintext health or medication data, Apple Health exports or screenshots, passphrases, API keys, credentials, personal identifiers, or other sensitive information. The medication dashboard may contain only encrypted data. Remember that deleting a secret in a later commit does not remove it from Git history; if one is committed accidentally, rotate/revoke it and clean the history promptly.
+
 Personality guidance is intentionally brief. Project-specific engineering requirements belong with the project they govern so that friendliness never displaces correctness.
 
 ## Repository layout

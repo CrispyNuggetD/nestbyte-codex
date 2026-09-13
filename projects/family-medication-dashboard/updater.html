@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Dashboard Updater</title><style>body{font:16px system-ui;max-width:760px;margin:auto;padding:20px;background:#f4f7f5;color:#17221d}textarea,input,button{font:inherit;box-sizing:border-box;width:100%;margin:7px 0;padding:12px;border-radius:10px;border:1px solid #aabbb0}textarea{min-height:420px;font-family:ui-monospace,monospace}button{background:#176b45;color:white;border:0;font-weight:700}.error{color:#a22}</style></head><body>
+<h1>Medication Dashboard Updater</h1><p>Enter the shared passphrase and edit the JSON. Encryption happens locally. Download the result, then replace <code>data.enc.json</code> in GitHub.</p>
+<input id="password" type="password" placeholder="Shared passphrase" autocomplete="new-password">
+<textarea id="json" spellcheck="false">{
+  "updatedAt": "2026-09-13T12:00:00+08:00",
+  "patient": "Christopher",
+  "summary": "Replace this with a concise medication adherence summary.",
+  "medications": [
+    {"name": "Example medication", "schedule": "Daily", "events": [
+      {"time": "2026-09-13T09:00:00+08:00", "status": "taken"}
+    ]}
+  ],
+  "notes": ["Replace all sample content before publishing."]
+}</textarea>
+<button id="encrypt">Encrypt and download data.enc.json</button><p id="error" class="error"></p>
+<script>
+const enc=new TextEncoder();const b64=b=>btoa(String.fromCharCode(...new Uint8Array(b)));
+async function run(){const error=document.querySelector('#error');error.textContent='';try{const password=document.querySelector('#password').value;if(password.length<4)throw Error('Enter the shared passphrase.');const data=JSON.parse(document.querySelector('#json').value);data.updatedAt=new Date().toISOString();const salt=crypto.getRandomValues(new Uint8Array(16));const iv=crypto.getRandomValues(new Uint8Array(12));const raw=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveKey']);const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:250000,hash:'SHA-256'},raw,{name:'AES-GCM',length:256},false,['encrypt']);const ciphertext=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,enc.encode(JSON.stringify(data)));const blob=new Blob([JSON.stringify({v:1,kdf:'PBKDF2-SHA256',iterations:250000,cipher:'AES-256-GCM',salt:b64(salt),iv:b64(iv),ciphertext:b64(ciphertext)},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='data.enc.json';a.click();URL.revokeObjectURL(a.href);}catch(e){error.textContent=e.message;}}
+document.querySelector('#encrypt').addEventListener('click',run);
+</script></body></html>

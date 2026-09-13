@@ -7,6 +7,11 @@ NestByte is Christopher's central workspace for building, organizing, and showca
 >
 > Never commit plaintext health or medication data, Apple Health exports or screenshots, passphrases, API keys, credentials, personal identifiers, or other sensitive information. The medication dashboard may contain only encrypted data. Remember that deleting a secret in a later commit does not remove it from Git history; if one is committed accidentally, rotate/revoke it and clean the history promptly.
 
+## Live websites
+
+- [NestByte projects](https://crispynuggetd.github.io/nestbyte-codex/)
+- [Family Medication Dashboard](https://crispynuggetd.github.io/nestbyte-codex/medication-dashboard/)
+
 Personality guidance is intentionally brief. Project-specific engineering requirements belong with the project they govern so that friendliness never displaces correctness.
 
 ## Repository layout

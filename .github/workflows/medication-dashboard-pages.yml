@@ -1,9 +1,10 @@
-name: Deploy medication dashboard
+name: Deploy NestByte projects
 
 on:
   push:
     branches: [main]
     paths:
+      - "site/**"
       - "projects/family-medication-dashboard/**"
       - ".github/workflows/medication-dashboard-pages.yml"
   workflow_dispatch:
@@ -14,7 +15,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: medication-dashboard-pages
+  group: nestbyte-pages
   cancel-in-progress: false
 
 jobs:
@@ -26,9 +27,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Assemble site
+        run: |
+          mkdir -p _site/medication-dashboard
+          cp site/index.html _site/index.html
+          cp -R projects/family-medication-dashboard/. _site/medication-dashboard/
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: projects/family-medication-dashboard
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

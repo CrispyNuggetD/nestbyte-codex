@@ -2,6 +2,9 @@
 
 A zero-backend static dashboard. Medication data is encrypted locally with AES-256-GCM; the host receives only ciphertext.
 
+> [!WARNING]
+> This repository and its Git history are public because GitHub Pages requires public access for this setup. Never commit plaintext medication or health data, Apple Health exports or screenshots, the shared passphrase, credentials, or identifying sensitive information. Commit only the encrypted `data.enc.json` payload.
+
 ## Updating with another chat
 
 Paste this project directory's GitHub URL into a capable ChatGPT or Codex chat, attach an Apple Health medication screenshot or export, and say:
@@ -18,7 +21,7 @@ Review the assistant's interpretation before it encrypts anything. See [UPDATE_G
 4. Replace this directory's `data.enc.json` in GitHub and merge the change.
 5. Reload the dashboard.
 
-The initial encrypted record contains no medication events. Never commit plaintext health exports or the passphrase. This is a family reference dashboard, not a clinical record or emergency system.
+Never commit plaintext health exports or the passphrase. This is a family reference dashboard, not a clinical record or emergency system.
 
 ## Hosting
 

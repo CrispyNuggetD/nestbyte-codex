@@ -22,4 +22,8 @@ The initial encrypted record contains no medication events. Never commit plainte
 
 ## Hosting
 
-Publish `projects/family-medication-dashboard` as a static directory with no build command. HTTPS is required for browser cryptography.
+The included GitHub Pages workflow publishes this directory at:
+
+`https://crispynuggetd.github.io/nestbyte-codex/`
+
+HTTPS is required for browser cryptography. In repository **Settings → Pages**, select **GitHub Actions** as the source once; subsequent merges update the site automatically.

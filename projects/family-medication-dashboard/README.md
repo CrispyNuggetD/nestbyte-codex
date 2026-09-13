@@ -2,7 +2,15 @@
 
 A zero-backend static dashboard. Medication data is encrypted locally with AES-256-GCM; the host receives only ciphertext.
 
-## Updating from an iPhone
+## Updating with another chat
+
+Paste this project directory's GitHub URL into a capable ChatGPT or Codex chat, attach an Apple Health medication screenshot or export, and say:
+
+> Follow this project's AGENTS.md and prepare my encrypted dashboard update.
+
+Review the assistant's interpretation before it encrypts anything. See [UPDATE_GUIDE.md](UPDATE_GUIDE.md) for the complete handoff and upload path.
+
+## Updating manually from an iPhone
 
 1. Open `updater.html` through the deployed site.
 2. Edit the JSON and enter the shared passphrase.

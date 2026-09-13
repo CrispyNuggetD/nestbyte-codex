@@ -13,4 +13,4 @@ When the user supplies this project URL plus an Apple Health medication screensh
 7. Verify that the produced payload decrypts and parses correctly.
 8. Return only the replacement `data.enc.json` as the persistent health-data artifact, plus concise upload instructions for `projects/family-medication-dashboard/data.enc.json`.
 
-Do not commit or upload plaintext health data, screenshots, exports, passphrases, temporary files, tokens or or command output containing the passphrase. Do not silently change the cryptographic format. This dashboard is a family reference, not a clinical record or emergency alert system.
+Do not commit or upload plaintext health data, screenshots, exports, passphrases, temporary files, tokens, or command output containing the passphrase. Do not silently change the cryptographic format. This dashboard is a family reference, not a clinical record or emergency alert system.

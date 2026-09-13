@@ -27,6 +27,6 @@ Never commit plaintext health exports or the passphrase. This is a family refere
 
 The included GitHub Pages workflow publishes this directory at:
 
-`https://crispynuggetd.github.io/nestbyte-codex/`
+`https://crispynuggetd.github.io/nestbyte-codex/medication-dashboard/`
 
-HTTPS is required for browser cryptography. In repository **Settings → Pages**, select **GitHub Actions** as the source once; subsequent merges update the site automatically.
+The repository's root Pages URL is a project index, allowing future projects to use their own subpaths. HTTPS is required for browser cryptography. In repository **Settings → Pages**, select **GitHub Actions** as the source once; subsequent merges update the site automatically.

@@ -1,5 +1,7 @@
 # Family Medication Dashboard
 
+[Open the live medication dashboard](https://crispynuggetd.github.io/nestbyte-codex/medication-dashboard/)
+
 A zero-backend static dashboard. Medication data is encrypted locally with AES-256-GCM; the host receives only ciphertext.
 
 > [!WARNING]
@@ -25,8 +27,6 @@ Never commit plaintext health exports or the passphrase. This is a family refere
 
 ## Hosting
 
-The included GitHub Pages workflow publishes this directory at:
-
-`https://crispynuggetd.github.io/nestbyte-codex/medication-dashboard/`
+The included GitHub Pages workflow publishes this directory at the [live dashboard URL](https://crispynuggetd.github.io/nestbyte-codex/medication-dashboard/).
 
 The repository's root Pages URL is a project index, allowing future projects to use their own subpaths. HTTPS is required for browser cryptography. In repository **Settings → Pages**, select **GitHub Actions** as the source once; subsequent merges update the site automatically.
